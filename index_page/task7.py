@@ -9,6 +9,7 @@ Product.objects.all()
 
 #Filtering products by their name
 Product.objects.get(Product="Ink")
+Product.objects.get(Product="Titus")
 
 #Getting a single record from the product table
 Product.objects.get(pk=2)
