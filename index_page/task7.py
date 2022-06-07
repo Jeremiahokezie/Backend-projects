@@ -8,7 +8,7 @@ new_record.save()
 Product.objects.all()
 
 #Filtering products by their name
-Product.objects.values_list('Product', flat=True).distinct()
+Product.objects.get(Product="Ink")
 
 #Getting a single record from the product table
 Product.objects.get(pk=2)
