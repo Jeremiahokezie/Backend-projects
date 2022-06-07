@@ -12,7 +12,7 @@ class People(models.Model):
 class Addres(models.Model):
     Name_of_Company = models.CharField(max_length=10000)
     Address = models.CharField(max_length=10000)
-    Owner = models.OneToOneField(People, on_delete=models.CASCADE) #The address of a place can only belong to that place
+    Owner = models.ForeignKey(People, on_delete=models.CASCADE) #The same address can belong to the same people who live in the same house. That one address but the address belongs to many people who leave in the same house
 
     def __str__(self):
         return self.Name_of_Company
