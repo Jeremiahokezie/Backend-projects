@@ -1,4 +1,4 @@
-from .models import Product
+from index_page.models import Product
 
 #Inserting a new record
 new_record = Product(Product="Ink", Price="$15")
