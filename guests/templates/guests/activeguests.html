@@ -1,0 +1,102 @@
+{% extends "index/home.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+.table{
+    overflow-y: auto;
+    max-width: 100%;
+    padding: 21px 0px 0px 20px;
+    @media screen and (max-width) {
+        background-color: white;
+    }
+}
+
+table[id="table"], th, td{
+    border: 1px solid black;
+    text-transform: capitalize;
+    border-collapse: collapse !important;
+    padding: 4px;
+    font-family:'Times New Roman', Times, serif;
+    text-align:center;
+}
+
+table[id="table"] tr th{
+    text-align: center;
+    background-color: rgba(142,91,34,1);
+    color: white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+table[id="table"] th[id="no"]{
+    
+    border-left: 1px solid rgba(142,91,34,1) !important;
+    
+    
+}
+
+table[id="table"] th[id="non"]{
+    
+    border-right: 1px solid rgba(142,91,34,1) !important;
+    
+}
+
+table[id="table"] td[id="small"]{
+    
+    text-transform: lowercase;
+    
+}
+
+</style>
+
+</head>
+<div class="table">
+    
+    <table id="table">
+        <tr>
+            
+            <th id="no">S/N</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Occupation</th>
+            <th>Room Category</th>
+            <th>Room Type</th>
+            <th>Room Number</th>
+            <th>Amount Paid</th>
+            <th>Number of Nights</th>
+            <th>Start Date</th>
+            <th id="non">End date</th>
+        </tr>
+        {% for guests in guest %}
+        <tr>
+            <td style="background-color: rgba(142,91,34,1); color:white"><b>{{forloop.counter}}</b></td>
+            <td>{{guests.Name}}</td>
+            <td id="small">{{guests.Email}}</td>
+            <td>{{guests.Occupation}}</td>
+            <td>{{guests.Room_Category}}</td>
+            <td>{{guests.Room_Type}}</td>
+            <td>{{guests.Room_Number}}</td>
+            <td>{{guests.Amount_Paid}}</td>
+            <td>{{guests.Number_of_Nights}}</td>
+            <td>{{guests.Start_Date}}</td>
+            <td>{{guests.End_Date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</html>
+
+{% endblock body%}
+    
+    
+
+
+    
+

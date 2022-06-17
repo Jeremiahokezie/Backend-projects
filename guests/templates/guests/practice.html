@@ -1,0 +1,59 @@
+<div>
+    <form name="first" action="{% url 'guests:deluxe1view' %}" method="post">
+        {% csrf_token %}
+        <fieldset id="guest">
+            <legend >Guest Information</legend>
+            <div style="border: 1px solid black; padding: 14px 0px 12px 10px">
+                <label for="name"><b>Name:</b></label>
+                <input type="text" name="Name" id="name" required><br>
+
+                <label for="email"><b>Email:</b></label>
+                <input type="email" name="Email" id="email" required><br>
+
+                <label for="occupation"><b>Occupation:</b></label>
+                <input type="text" name="Occupation" id="occupation" required><br>
+                </div>
+            
+        </fieldset>
+        
+        <fieldset id="room">
+            <legend>Room Information</legend>
+            <div style="border: 1px solid black; padding: 14px 0px 12px 10px">
+                <label for="roomcategory"><b>Room Category:</b></label>
+                <input type="text" name="Room_Category" id="roomcategory" value="Deluxe" required><br>
+
+                <label for="roomtype"><b>Room Type:</b></label>
+                <input type="text" name="Room_Type" id="roomtype" value="King Size Bedroom" required><br>
+
+                <label for="roomnumber"><b>Room Number:</b></label>
+                <input type="text" name="Room_Number" id="roomnumber"><br>
+            </div>
+        </fieldset>
+        
+        
+        <fieldset id="details">
+            <legend>Room Detail</legend>
+            <div style="border: 1px solid black; padding: 14px 0px 12px 10px">
+                
+                <label for="amount"><b>Amount Paid:</b></label>
+                <input type="text" name="Amount_Paid" id="amount" maxlength="10"><br>
+        
+                <label for="nights"><b>Number of Nights:</b></label>
+                <input type="number" name="Number_of_Nights" id="nights"><br>
+        
+                <label for="start"><b>Start Date:</b></label>
+                <input type="date" name="Start_Date" id="start"><br>
+        
+                <label for="end"><b>End Date:</b></label>
+                <input type="date" name="End_Date" id="end"><br>
+            </div>
+           
+        </fieldset>
+       
+        <div style="padding: 14px 0px 12px 0px">
+            <button type="submit" style="padding: 6px" validate >Submit</button>
+        </div>
+        
+    </form>
+
+</div>

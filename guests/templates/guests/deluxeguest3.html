@@ -1,0 +1,203 @@
+{% extends "index/home.html" %}
+{% load static %}
+
+{% block body%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+
+form[id="form"] {
+    padding: 43px ;
+    font-family:'Times New Roman', Times, serif
+}
+
+form[id="form"] fieldset[id="guest"] legend{
+    margin-bottom: 5px;
+
+}
+
+
+
+form[id="form"] input[id="name"]{
+    border: 1px solid black !important;
+    
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 71px !important;
+
+}
+
+form[id="form"] input[id="email"]{
+    border: 1px solid black !important;
+   
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 70px !important;
+
+}
+
+form[id="form"] input[id="occupation"]{
+    border: 1px solid black !important;
+   
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 32px !important;
+
+}
+
+
+form[id="form"] fieldset[id="room"] legend{
+    margin-bottom: 5px;
+
+}
+
+form[id="form"] fieldset[id="room"]{
+    margin-top: 50px;
+
+}
+
+
+
+form[id="form"] input[id="roomcategory"]{
+    border: 1px solid black !important;
+    
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 40px !important;
+    font-weight: 100;
+
+}
+
+form[id="form"] input[id="roomtype"]{
+    border: 1px solid black !important;
+   
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 70px !important;
+
+}
+
+form[id="form"] input[id="roomnumber"]{
+    border: 1px solid black !important;
+   
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 46px !important;
+
+}
+
+form[id="form"] fieldset[id="details"] legend{
+    margin-bottom: 5px;
+
+}
+
+form[id="form"] fieldset[id="details"]{
+    margin-top: 50px;
+
+}
+
+form[id="form"] input[id="amount"]{
+    border: 1px solid black !important;
+    
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 78px !important;
+    font-weight: 100;
+
+}
+
+form[id="form"] input[id="start"]{
+    border: 1px solid black !important;
+   
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 98px !important;
+
+}
+
+form[id="form"] input[id="end"]{
+    border: 1px solid black !important;
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 104px !important;
+}
+
+form[id="form"] input[id="nights"]{
+    border: 1px solid black !important;
+    width: 350px !important;
+    height: 25px !important;
+    margin: -1002px 46px !important;
+}
+
+
+</style>
+</head>
+<div>
+    <form id="form" action="{% url 'guests:deluxe3view' %}" method="post">
+        {% csrf_token %}
+        <fieldset id="guest">
+            <legend >Guest Information</legend>
+            <div style="border: 1px solid black; padding: 14px 0px 12px 10px">
+                <label for="name"><b>Name:</b></label>
+                <input type="text" name="Name" id="name" required><br>
+
+                <label for="email"><b>Email:</b></label>
+                <input type="email" name="Email" id="email" required><br>
+
+                <label for="occupation"><b>Occupation:</b></label>
+                <input type="text" name="Occupation" id="occupation" required><br>
+                </div>
+            
+        </fieldset>
+        
+        <fieldset id="room">
+            <legend>Room Information</legend>
+            <div style="border: 1px solid black; padding: 14px 0px 12px 10px">
+                <label for="roomcategory"><b>Room Category:</b></label>
+                <input type="text" name="Room_Category" id="roomcategory" value="Deluxe" required><br>
+
+                <label for="roomtype"><b>Room Type:</b></label>
+                <input type="text" name="Room_Type" id="roomtype" value="Special Spa Room" required><br>
+
+                <label for="roomnumber"><b>Room Number:</b></label>
+                <input type="text" name="Room_Number" id="roomnumber"><br>
+            </div>
+        </fieldset>
+        
+        
+        <fieldset id="details">
+            <legend>Room Detail</legend>
+            <div style="border: 1px solid black; padding: 14px 0px 12px 10px">
+                
+                <label for="amount"><b>Amount Paid:</b></label>
+                <input type="text" name="Amount_Paid" id="amount" maxlength="10"><br>
+        
+                <label for="nights"><b>Number of Nights:</b></label>
+                <input type="number" name="Number_of_Nights" id="nights"><br>
+        
+                <label for="start"><b>Start Date:</b></label>
+                <input type="date" name="Start_Date" id="start"><br>
+        
+                <label for="end"><b>End Date:</b></label>
+                <input type="date" name="End_Date" id="end"><br>
+            </div>
+           
+        </fieldset>
+       
+        <div style="padding: 14px 0px 12px 0px">
+            <button type="submit" style="padding: 6px">Submit</button>
+        </div>
+        
+    </form>
+
+</div>
+</html>
+
+{% endblock body%}
+    
+    
+
+
+    
+
